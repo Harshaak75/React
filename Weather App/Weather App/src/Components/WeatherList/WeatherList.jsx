@@ -62,6 +62,8 @@ function WeatherList({ weather, time }) {
 
     const data = { weatherId: weather.id, extraData: send_data };
 
+    localStorage.setItem('weatherData', JSON.stringify(send_data));
+
 
 
     return (

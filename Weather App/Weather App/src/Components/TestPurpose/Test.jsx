@@ -36,12 +36,21 @@ function Test() {
 
   // state
 
-
   const location = useLocation();
-  const { weatherId, extraData } = location.state || {};
-  console.log(extraData.img)
+  let { weatherId, extraData } = location.state || {};
+
+  
+  if(!extraData){
+    extraData = JSON.parse(localStorage.getItem('weatherData'));
+  }
+
+  console.log("the weather data: ", extraData.img)
+
+  // console.log("the weather data : ", weatherd)
 
   const celsus = Math.floor(extraData.temp);
+
+
 
   const date = new Date();
   const day = date.toLocaleDateString("us-en", { weekday: "long" })
