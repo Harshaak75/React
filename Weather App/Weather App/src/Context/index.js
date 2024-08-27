@@ -1,1 +1,0 @@
-export {weatherContext, WeatherWrapper, useWeatherData} from "./WeatherContext";
